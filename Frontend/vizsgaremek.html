@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b14">
+    <title>NEXORA | Enterprise IT Solutions</title>
+    <link rel="stylesheet" href="vizsgaremek.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="vizsgaremek.js" defer></script>
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">N</div>
+            <div>
+                <h2>NEXORA</h2>
+                <span>ENTERPRISE SYSTEMS</span>
+            </div>
+        </div>
+
+        <div class="sidebar-label">FŐMENÜ</div>
+
+        <nav class="navigation">
+            <button class="nav-item active" data-page="dashboard">
+                <span>◈</span> Áttekintés
+            </button>
+
+            <button class="nav-item" data-page="catalog">
+                <span>▦</span> Termékkatalógus
+            </button>
+
+            <button class="nav-item" data-page="builder">
+                <span>⚙</span> Gépösszerakó
+            </button>
+
+            <button class="nav-item" data-page="bulk">
+                <span>▤</span> Tömeges rendelés
+            </button>
+
+            <button class="nav-item" data-page="licenses">
+                <span>◉</span> Licenckezelés
+            </button>
+
+            <button class="nav-item" data-page="price">
+                <span>⌕</span> Árösszehasonlító
+            </button>
+
+            <button class="nav-item" data-page="forum">
+                <span>◎</span> Közösségi fórum
+            </button>
+        </nav>
+
+        <div class="sidebar-label">FIÓK</div>
+
+        <nav class="navigation">
+            <button class="nav-item" data-page="orders">
+                <span>▣</span> Rendeléseim
+            </button>
+
+            <button class="nav-item" data-page="profile">
+                <span>♙</span> Profilom
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="support-card">
+                <div class="support-icon">✦</div>
+                <h3>Segítségre van szükséged?</h3>
+                <p>Vedd fel velünk a kapcsolatot!</p>
+                <button onclick="showNotification('A támogatási felület hamarosan elérhető.')">
+                    Kapcsolatfelvétel →
+                </button>
+            </div>
+
+            <div class="user-mini">
+                <div class="avatar">AD</div>
+                <div>
+                    <strong>Admin User</strong>
+                    <span>Vállalati fiók</span>
+                </div>
+                <button onclick="navigate('profile')">⋯</button>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+
+            <div class="breadcrumb">
+                <span>NEXORA</span>
+                <span>/</span>
+                <strong id="breadcrumbTitle">Áttekintés</strong>
+            </div>
+
+            <div class="topbar-right">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    Rendszer online
+                </div>
+
+                <button class="icon-button" onclick="showNotification('Nincsenek új értesítéseid.')">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-user">
+                    <div class="avatar">AD</div>
+                    <span>Admin User</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div class="page-container">
+
+            <!-- DASHBOARD -->
+            <section class="page active" id="dashboard">
+
+                <div class="welcome-row">
+                    <div>
+                        <div class="eyebrow">ENTERPRISE MANAGEMENT PLATFORM</div>
+                        <h1>Üdvözlünk a <span>NEXORA</span> rendszerében.</h1>
+                        <p>Vállalati IT-eszközök, konfigurációk és beszerzések egyetlen helyen.</p>
+                    </div>
+
+                    <button class="primary-button" onclick="navigate('bulk')">
+                        + Új vállalati rendelés
+                    </button>
+                </div>
+
+                <div class="hero-banner">
+                    <div class="hero-content">
+                        <div class="hero-tag">SMART BUSINESS PROCUREMENT</div>
+                        <h2>Az IT-beszerzés<br>új szintje.</h2>
+                        <p>Tervezd meg, konfiguráld és rendeld meg vállalatod eszközeit egyetlen platformon.</p>
+
+                        <div class="hero-actions">
+                            <button class="primary-button" onclick="navigate('catalog')">
+                                Termékek megtekintése →
+                            </button>
+                            <button class="outline-button" onclick="navigate('builder')">
+                                Gépösszerakó
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="hero-chip">N</div>
+                        <div class="floating-card card-one">
+                            <span>PROCESSING POWER</span>
+                            <strong>Enterprise</strong>
+                        </div>
+                        <div class="floating-card card-two">
+                            <span>PROCUREMENT</span>
+                            <strong>Smart & Fast</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Rendszeráttekintés</h2>
+                        <p>A vállalati beszerzések pillanatnyi állapota.</p>
+                    </div>
+                    <span class="live-label">LIVE DATA</span>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Aktív rendelések</span>
+                            <span class="stat-icon purple">▣</span>
+                        </div>
+                        <strong id="statOrders">0</strong>
+                        <small>Folyamatban lévő rendelések</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Regisztrált termékek</span>
+                            <span class="stat-icon blue">▦</span>
+                        </div>
+                        <strong id="statProducts">0</strong>
+                        <small>Elérhető vállalati eszközök</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Licencállapot</span>
+                            <span class="stat-icon green">◉</span>
+                        </div>
+                        <strong id="statLicenses">0</strong>
+                        <small>Nyilvántartott licencek</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Fórumbejegyzések</span>
+                            <span class="stat-icon orange">◎</span>
+                        </div>
+                        <strong id="statForum">0</strong>
+                        <small>Közösségi témák</small>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Legutóbbi rendelések</h3>
+                                <p>Vállalati beszerzések</p>
+                            </div>
+                            <button class="text-button" onclick="navigate('orders')">Összes →</button>
+                        </div>
+
+                        <div id="recentOrders" class="table-wrapper">
+                            <div class="empty-state">Rendelési adatok betöltése...</div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Gyorsműveletek</h3>
+                                <p>Gyakran használt funkciók</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-actions">
+                            <button onclick="navigate('builder')">
+                                <span>⚙</span>
+                                <div><strong>Gép konfigurálása</strong><small>Egyedi hardver összeállítása</small></div>
+                                →
+                            </button>
+
+                            <button onclick="navigate('bulk')">
+                                <span>▤</span>
+                                <div><strong>Tömeges rendelés</strong><small>Több gép egy rendelésben</small></div>
+                                →
+                            </button>
+
+                            <button onclick="navigate('licenses')">
+                                <span>◉</span>
+                                <div><strong>Licencek ellenőrzése</strong><small>Licencjogosultságok áttekintése</small></div>
+                                →
+                            </button>
+
+                            <button onclick="navigate('forum')">
+                                <span>◎</span>
+                                <div><strong>Közösségi fórum</strong><small>Kérdések és ajánlások</small></div>
+                                →
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CATALOG -->
+            <section class="page" id="catalog">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">PRODUCT MANAGEMENT</div>
+                        <h1>Termékkatalógus</h1>
+                        <p>Vállalati számítógépek, laptopok és szerverek.</p>
+                    </div>
+
+                    <button class="primary-button" onclick="navigate('builder')">
+                        + Egyedi konfiguráció
+                    </button>
+                </div>
+
+                <div class="filter-bar">
+                    <input type="search" id="productSearch" placeholder="Keresés termékek között...">
+
+                    <select id="categoryFilter">
+                        <option value="">Minden kategória</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Asztali PC">Asztali PC</option>
+                        <option value="Szerver">Szerver</option>
+                        <option value="Workstation">Workstation</option>
+                    </select>
+
+                    <select id="sortProducts">
+                        <option value="default">Alapértelmezett rendezés</option>
+                        <option value="asc">Ár szerint növekvő</option>
+                        <option value="desc">Ár szerint csökkenő</option>
+                    </select>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <div class="empty-state">Termékek betöltése...</div>
+                </div>
+
+            </section>
+
+
+            <!-- BUILDER -->
+            <section class="page" id="builder">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">CUSTOM HARDWARE CONFIGURATION</div>
+                        <h1>Gépösszerakó</h1>
+                        <p>Állítsd össze saját vállalati számítógépedet.</p>
+                    </div>
+
+                    <div class="builder-badge">CUSTOM CONFIGURATOR</div>
+                </div>
+
+                <div class="builder-layout">
+
+                    <div class="panel builder-form">
+
+                        <div class="form-section">
+                            <h3>01. Alapadatok</h3>
+
+                            <label>Konfiguráció neve</label>
+                            <input id="configName" type="text" placeholder="Pl. Irodai munkaállomás">
+
+                            <label>Gép típusa</label>
+                            <select id="configType">
+                                <option value="Asztali PC">Asztali PC</option>
+                                <option value="Workstation">Workstation</option>
+                                <option value="Szerver">Szerver</option>
+                            </select>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>02. Processzor</h3>
+
+                            <label>Processzor kiválasztása</label>
+                            <select id="cpuSelect">
+                                <option value="">Válassz processzort</option>
+                            </select>
+
+                            <div class="socket-info">
+                                <span>FOGLALAT</span>
+                                <strong id="cpuSocket">Nincs kiválasztva</strong>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>03. Alaplap</h3>
+
+                            <label>Alaplap kiválasztása</label>
+                            <select id="motherboardSelect">
+                                <option value="">Válassz alaplapot</option>
+                            </select>
+
+                            <div class="socket-info">
+                                <span>FOGLALAT</span>
+                                <strong id="boardSocket">Nincs kiválasztva</strong>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>04. Memória</h3>
+
+                            <label>RAM kiválasztása</label>
+                            <select id="ramSelect">
+                                <option value="">Válassz memóriát</option>
+                            </select>
+
+                            <div class="socket-info">
+                                <span>MEMÓRIAFOGLALAT / TÍPUS</span>
+                                <strong id="ramSocket">Nincs kiválasztva</strong>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>05. További alkatrészek</h3>
+
+                            <label>Videokártya</label>
+                            <select id="gpuSelect">
+                                <option value="">Nincs külön videokártya</option>
+                            </select>
+
+                            <label>Háttértár</label>
+                            <select id="storageSelect">
+                                <option value="">Válassz háttértárat</option>
+                            </select>
+
+                            <label>Tápegység</label>
+                            <select id="psuSelect">
+                                <option value="">Válassz tápegységet</option>
+                            </select>
+
+                            <label>Ház</label>
+                            <select id="caseSelect">
+                                <option value="">Válassz számítógépházat</option>
+                            </select>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>06. Rendelési mennyiség</h3>
+
+                            <label>Darabszám</label>
+                            <input id="configQuantity" type="number" min="1" max="1000" value="1">
+                        </div>
+
+                        <button class="primary-button full-button" id="saveConfig">
+                            Konfiguráció hozzáadása a rendeléshez →
+                        </button>
+
+                    </div>
+
+                    <div class="builder-summary panel">
+
+                        <div class="summary-visual">
+                            <div class="computer-illustration">▣</div>
+                            <span>CUSTOM BUILD</span>
+                        </div>
+
+                        <h3>Konfiguráció összesítése</h3>
+                        <div id="configSummary" class="summary-items">
+                            Még nincs kiválasztott alkatrész.
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Becsült végösszeg</span>
+                            <strong id="configTotal">0 Ft</strong>
+                        </div>
+
+                        <p class="muted-note">
+                            A foglalatok tájékoztató adatok. A rendszer nem végez automatikus kompatibilitásvizsgálatot.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BULK ORDER -->
+            <section class="page" id="bulk">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">MULTI DEVICE PROCUREMENT</div>
+                        <h1>Tömeges rendelés</h1>
+                        <p>Rendelj egyszerre több, akár különböző konfigurációjú vállalati gépet.</p>
+                    </div>
+                </div>
+
+                <div class="bulk-info-banner">
+                    <div class="bulk-icon">▤</div>
+                    <div>
+                        <h3>Egy rendelés. Több konfiguráció.</h3>
+                        <p>Akár 20 vagy több gépet is kezelhetsz egyszerre. Minden konfiguráció külön mennyiséggel és licencbeállítással rendelkezhet.</p>
+                    </div>
+                </div>
+
+                <div class="bulk-toolbar">
+                    <h3>Rendelési tételek</h3>
+                    <button class="primary-button" id="addBulkItem">+ Új gépcsoport</button>
+                </div>
+
+                <div id="bulkItems" class="bulk-items">
+                    <div class="empty-state">Még nincs hozzáadott gépcsoport.</div>
+                </div>
+
+                <div class="bulk-footer panel">
+                    <div>
+                        <span>Összes rendelt gép</span>
+                        <strong id="bulkQuantity">0 db</strong>
+                    </div>
+
+                    <div>
+                        <span>Teljes rendelési érték</span>
+                        <strong id="bulkTotal">0 Ft</strong>
+                    </div>
+
+                    <button class="primary-button" id="submitBulkOrder">
+                        Rendelés ellenőrzése →
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- LICENSES -->
+            <section class="page" id="licenses">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">SOFTWARE LICENSE MANAGEMENT</div>
+                        <h1>Licenckezelés</h1>
+                        <p>Hardverekhez és vállalati konfigurációkhoz tartozó licencek kezelése.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid license-stats">
+                    <div class="stat-card">
+                        <span>Összes licenc</span>
+                        <strong id="licenseTotal">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Aktív licencek</span>
+                        <strong id="licenseActive">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Lejárt licencek</span>
+                        <strong id="licenseExpired">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Ellenőrzésre vár</span>
+                        <strong id="licensePending">0</strong>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Licencnyilvántartás</h3>
+                            <p>Elérhető és hozzárendelhető licencek</p>
+                        </div>
+                    </div>
+
+                    <div id="licenseList" class="table-wrapper">
+                        <div class="empty-state">Licencadatok betöltése...</div>
+                    </div>
+                </div>
+
+                <div class="panel license-check-panel">
+                    <h3>Licencellenőrzés rendeléshez</h3>
+                    <p>Válaszd ki a rendelést, és ellenőrizd, hogy a hozzá rendelt licencek érvényesek-e.</p>
+
+                    <div class="inline-form">
+                        <select id="licenseOrderSelect">
+                            <option value="">Válassz rendelést</option>
+                        </select>
+                        <button class="primary-button" id="checkLicenses">
+                            Licencek ellenőrzése
+                        </button>
+                    </div>
+
+                    <div id="licenseCheckResult"></div>
+                </div>
+
+            </section>
+
+
+            <!-- PRICE COMPARISON -->
+            <section class="page" id="price">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">SMART PRICE COMPARISON</div>
+                        <h1>Árösszehasonlító</h1>
+                        <p>Hasonlítsd össze a különböző beszállítók ajánlatait.</p>
+                    </div>
+                </div>
+
+                <div class="price-search panel">
+                    <div>
+                        <h3>Találd meg a legjobb ajánlatot!</h3>
+                        <p>Keresés termék vagy konfiguráció alapján.</p>
+                    </div>
+
+                    <div class="search-row">
+                        <input type="search" id="priceSearch" placeholder="Pl. Dell Latitude, Intel Core i7...">
+                        <button class="primary-button" id="searchPrices">Ajánlatok keresése →</button>
+                    </div>
+                </div>
+
+                <div id="priceResults" class="price-results">
+                    <div class="empty-state">A keresés után itt jelennek meg a beszállítói ajánlatok.</div>
+                </div>
+
+                <p class="muted-note">
+                    Az ajánlatok külső árösszehasonlító szolgáltatásból vagy a backend által kezelt beszállítói adatforrásokból érkeznek.
+                </p>
+
+            </section>
+
+
+            <!-- FORUM -->
+            <section class="page" id="forum">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">NEXORA COMMUNITY</div>
+                        <h1>Közösségi fórum</h1>
+                        <p>Kérdezz, oszd meg tapasztalataidat, és ajánlj másoknak megfelelő eszközöket.</p>
+                    </div>
+
+                    <button class="primary-button" id="newTopicButton">+ Új téma indítása</button>
+                </div>
+
+                <div class="forum-layout">
+
+                    <div class="forum-main">
+
+                        <div class="forum-filters">
+                            <input type="search" id="forumSearch" placeholder="Keresés a témák között...">
+
+                            <select id="forumCategory">
+                                <option value="">Minden kategória</option>
+                                <option value="Laptop">Laptopok</option>
+                                <option value="Asztali PC">Asztali PC-k</option>
+                                <option value="Szerver">Szerverek</option>
+                                <option value="Alkatrész">Alkatrészek</option>
+                                <option value="Egyéb">Egyéb</option>
+                            </select>
+                        </div>
+
+                        <div id="forumTopics">
+                            <div class="empty-state">Fórumbejegyzések betöltése...</div>
+                        </div>
+
+                    </div>
+
+                    <aside class="forum-sidebar panel">
+                        <h3>Fórum közösség</h3>
+                        <p>Oszd meg a tapasztalataidat, segíts másoknak a megfelelő vállalati eszköz kiválasztásában.</p>
+
+                        <div class="forum-rule">
+                            <strong>01</strong>
+                            <span>Legyél segítőkész és tárgyilagos.</span>
+                        </div>
+
+                        <div class="forum-rule">
+                            <strong>02</strong>
+                            <span>Indokold meg a termékajánlásaidat.</span>
+                        </div>
+
+                        <div class="forum-rule">
+                            <strong>03</strong>
+                            <span>Kerüld a reklámokat és a félrevezető információkat.</span>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </section>
+
+
+            <!-- ORDERS -->
+            <section class="page" id="orders">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">PROCUREMENT HISTORY</div>
+                        <h1>Rendeléseim</h1>
+                        <p>Korábbi és folyamatban lévő vállalati rendelések.</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div id="ordersList" class="table-wrapper">
+                        <div class="empty-state">Rendelések betöltése...</div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE -->
+            <section class="page" id="profile">
+
+                <div class="page-heading">
+                    <div>
+                        <div class="eyebrow">ACCOUNT MANAGEMENT</div>
+                        <h1>Vállalati profil</h1>
+                        <p>Felhasználói és vállalati adatok kezelése.</p>
+                    </div>
+                </div>
+
+                <div class="profile-layout">
+
+                    <div class="panel profile-card">
+                        <div class="profile-avatar">AD</div>
+                        <h2 id="profileName">Admin User</h2>
+                        <p id="profileEmail">admin@nexora.hu</p>
+                        <span class="account-badge">VÁLLALATI FIÓK</span>
+                    </div>
+
+                    <div class="panel profile-form">
+                        <h3>Vállalati adatok</h3>
+
+                        <label>Cégnév</label>
+                        <input id="companyName" type="text" placeholder="Vállalat neve">
+
+                        <label>Kapcsolattartó</label>
+                        <input id="contactName" type="text" placeholder="Kapcsolattartó neve">
+
+                        <label>E-mail cím</label>
+                        <input id="contactEmail" type="email" placeholder="E-mail cím">
+
+                        <label>Adószám</label>
+                        <input id="taxNumber" type="text" placeholder="Adószám">
+
+                        <label>Számlázási cím</label>
+                        <input id="companyAddress" type="text" placeholder="Számlázási cím">
+
+                        <button class="primary-button" id="saveProfile">Adatok mentése</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- NEW FORUM TOPIC MODAL -->
+<div class="modal-overlay" id="topicModal">
+    <div class="modal">
+
+        <div class="modal-header">
+            <h2>Új fórumtéma</h2>
+            <button class="close-modal" data-close="topicModal">×</button>
+        </div>
+
+        <form id="topicForm">
+
+            <label>Téma címe</label>
+            <input type="text" id="topicTitle" required maxlength="150" placeholder="Miről szeretnél kérdezni?">
+
+            <label>Kategória</label>
+            <select id="topicType" required>
+                <option value="Laptop">Laptop</option>
+                <option value="Asztali PC">Asztali PC</option>
+                <option value="Szerver">Szerver</option>
+                <option value="Alkatrész">Alkatrész</option>
+                <option value="Egyéb">Egyéb</option>
+            </select>
+
+            <label>Leírás</label>
+            <textarea id="topicDescription" required rows="5" placeholder="Írd le részletesen a kérdésedet vagy az ajánlásodat..."></textarea>
+
+            <button class="primary-button full-button" type="submit">Téma közzététele</button>
+
+        </form>
+
+    </div>
+</div>
+
+
+<!-- ORDER REVIEW MODAL -->
+<div class="modal-overlay" id="orderModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Rendelés ellenőrzése</h2>
+            <button class="close-modal" data-close="orderModal">×</button>
+        </div>
+
+        <div id="orderReview"></div>
+
+        <button class="primary-button full-button" id="confirmOrder">
+            Rendelés véglegesítése
+        </button>
+    </div>
+</div>
+
+
+<!-- NOTIFICATION -->
+<div id="toast" class="toast"></div>
+
+</body>
+</html>
